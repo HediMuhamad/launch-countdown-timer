@@ -1,8 +1,8 @@
 export class DateUtils {
   date = new Date();
 
-  constructor(date: Date) {
-    this.date = date;
+  constructor(date?: Date) {
+    this.date = date ?? new Date();
   }
 
   add(count: number, period: keyof typeof this._periodToMilliseconds) {
