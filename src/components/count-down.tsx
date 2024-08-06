@@ -4,7 +4,7 @@ import { useCountDown } from "@/hooks/useCountDown";
 import { DateUtils } from "@/utils/date-utils";
 import { useRef } from "react";
 
-export const CountDown = () => {
+const CountDown = () => {
   const date = useRef(new DateUtils().add(9, "day").toDate())?.current;
   const changeableDate = useCountDown(date);
 
@@ -28,3 +28,5 @@ export const CountDown = () => {
     </div>
   );
 };
+
+export default CountDown;
