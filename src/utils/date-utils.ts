@@ -15,15 +15,40 @@ export class DateUtils {
     return new DateUtils(new Date(this.date.getTime() - milliseconds));
   }
 
+  getDiff(type: keyof typeof this._periodToMilliseconds, diffDate?: Date) {
+    const newInstance = new DateUtils(this.date);
+
+    const subtractCount = (diffDate ?? new Date())?.getTime();
+    const subtractedInstance = newInstance?.subtract(
+      subtractCount,
+      "millisecond"
+    );
+
+    const diff =
+      subtractedInstance?.toDate().getTime() / this._periodToMilliseconds[type];
+
+    if (type === "day") return Math.floor(diff);
+    return Math.floor(diff % this._maxPeriods[type]);
+  }
+
   toDate() {
     return this.date;
   }
 
   //Month are unstable, so we are not supporting it (some months are 30 days, others 31, and February has 28 or 29 days)
+  //It is easy, but we won't invest time on it while we don't need it
   private _periodToMilliseconds = {
     day: 86400000,
     hour: 3600000,
     minute: 60000,
     second: 1000,
+    millisecond: 1,
+  };
+
+  private _maxPeriods = {
+    hour: 24,
+    minute: 60,
+    second: 60,
+    millisecond: 1000,
   };
 }
