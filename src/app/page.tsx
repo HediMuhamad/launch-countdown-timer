@@ -1,3 +1,9 @@
+import { CountDown } from "@/components/count-down";
+
 export default function Home() {
-  return <main>The Workflow works</main>;
+  return (
+    <main>
+      <CountDown />
+    </main>
+  );
 }
