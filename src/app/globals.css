@@ -46,6 +46,14 @@ main {
   flex: 1;
 }
 
+main > h1 {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: var(--soft-red);
+  word-spacing: 8px;
+  letter-spacing: 4px;
+}
+
 @media screen and (min-width: 1440px) {
   body {
     background-size: contain, cover;

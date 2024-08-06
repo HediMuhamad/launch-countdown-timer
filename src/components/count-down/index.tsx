@@ -1,32 +1,17 @@
-"use client";
+import dynamic from "next/dynamic";
+import styles from "./style.module.css";
 
-import { useCountDown } from "@/hooks/useCountDown";
-import { DateUtils } from "@/utils/date-utils";
-import { useRef } from "react";
+const CountDown = dynamic(() => import("./count-down"), {
+  ssr: false,
+});
 
-const CountDown = () => {
-  const date = useRef(new DateUtils().add(9, "day").toDate())?.current;
-  const changeableDate = useCountDown(date);
-
-  const diffDate = new DateUtils(changeableDate);
-
+export const CountDownSection = () => {
   return (
-    <div>
-      <h1>Countdown</h1>
-      <div>
-        <span>{diffDate?.getDiff("day")}</span> days
-      </div>
-      <div>
-        <span>{diffDate?.getDiff("hour")}</span> hours
-      </div>
-      <div>
-        <span>{diffDate?.getDiff("minute")}</span> minutes
-      </div>
-      <div>
-        <span>{diffDate?.getDiff("second")}</span> seconds
-      </div>
+    <div className={styles["count-down-section"]}>
+      <h1 className={styles["count-down-section__headline"]}>
+        We&rsquo;re launching soon
+      </h1>
+      <CountDown />
     </div>
   );
 };
-
-export default CountDown;
