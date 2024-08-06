@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-export const useCountDown = (time: number) => {
-  const [count, setCount] = useState(time);
+export const useCountDown = (date: Date) => {
+  const [count, setCount] = useState(date?.getTime());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -11,5 +11,5 @@ export const useCountDown = (time: number) => {
     return () => clearInterval(timer);
   }, []);
 
-  return count;
+  return new Date(count);
 };
