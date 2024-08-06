@@ -13,17 +13,40 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
+    --grayish-blue: hsl(237, 18%, 59%);
+    --soft-red: hsl(345, 95%, 68%);
+
+    --white: hsl(0, 0%, 100%);
+    --dark-desaturated-blue: hsl(236, 21%, 26%);
+    --very-dark-blue: hsl(234, 17%, 12%);
+
+    font-size: 14px;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url("/pattern-hills.svg"), url("/bg-stars.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: auto 196px, cover;
+  background-position: bottom, top;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size: contain, cover;
+  }
 }
 
 @layer utilities {
