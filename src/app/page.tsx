@@ -1,3 +1,4 @@
+import { SocialSection } from "@/components/social-section";
 import dynamic from "next/dynamic";
 
 const CountDown = dynamic(() => import("@/components/count-down"), {
@@ -6,8 +7,11 @@ const CountDown = dynamic(() => import("@/components/count-down"), {
 
 export default function Home() {
   return (
-    <main>
-      <CountDown />
-    </main>
+    <>
+      <main>
+        <CountDown />
+      </main>
+      <SocialSection />
+    </>
   );
 }
