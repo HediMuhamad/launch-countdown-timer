@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import styles from "./style.module.css";
 
-const CountDown = dynamic(() => import("./count-down"), {
+const CountDown = dynamic(() => import("./component"), {
   ssr: false,
 });
 
