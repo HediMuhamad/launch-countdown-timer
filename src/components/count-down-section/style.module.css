@@ -1,0 +1,60 @@
+.count-down-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  gap: 7rem;
+  height: auto;
+}
+
+.count-down-section__headline {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: var(--white);
+  word-spacing: 8px;
+  letter-spacing: 4px;
+  text-wrap: balance;
+  text-align: center;
+}
+
+.count-down__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.count-down__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 10px;
+}
+
+.count-down__item__value {
+  width: 150px;
+  aspect-ratio: 6/5;
+  font-size: 6rem;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count-down__item__label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--white);
+  word-spacing: 8px;
+  letter-spacing: 4px;
+  opacity: 0.75;
+}
