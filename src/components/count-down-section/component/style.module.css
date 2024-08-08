@@ -6,17 +6,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 2rem;
 }
 
 .count-down-segment__units {
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 0px rgba(0, 0, 0, 0.08);
 }
 
 .count-down-segment__unit {
   height: 75px;
   overflow: hidden;
+  border-radius: 1rem;
+}
+
+.count-down-segment__unit--top {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.count-down-segment__unit--bottom {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .count-down-segment__unit--middle {

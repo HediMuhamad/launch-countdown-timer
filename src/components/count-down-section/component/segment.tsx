@@ -37,7 +37,12 @@ export const CountDownSegment: React.FC<CountDownUnitProps> = ({
 };
 
 const CountDownTopUnit = ({ value }: { value: string }) => {
-  return <CommonUnit value={value} />;
+  return (
+    <CommonUnit
+      unitContainerClassNames={["count-down-segment__unit--top"]}
+      value={value}
+    />
+  );
 };
 
 const CountDownMiddleTopUnit = ({ value }: { value: string }) => {
@@ -81,6 +86,7 @@ const CountDownBottomUnit = ({ value }: { value: string }) => {
   return (
     <CommonUnit
       value={value}
+      unitContainerClassNames={["count-down-segment__unit--bottom"]}
       unitNumberClassNames={["count-down-segment__unit-value--bottom"]}
     />
   );
