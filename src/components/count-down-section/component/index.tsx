@@ -3,7 +3,7 @@
 import { useCountDown } from "@/hooks/useCountDown";
 import { DateUtils } from "@/utils/date-utils";
 import { useMemo } from "react";
-import { CountDownUnit } from "./unit";
+import { CountDownSegment } from "./segment";
 
 const CountDown: React.FC = () => {
   const now = useMemo(() => new DateUtils().toDate(), []);
@@ -16,10 +16,16 @@ const CountDown: React.FC = () => {
   );
   return (
     <div className="flex gap-12">
-      <CountDownUnit label="days" value={diffDate.getDiff("day", now)} />
-      <CountDownUnit label="hours" value={diffDate.getDiff("hour", now)} />
-      <CountDownUnit label="minutes" value={diffDate.getDiff("minute", now)} />
-      <CountDownUnit label="seconds" value={diffDate.getDiff("second", now)} />
+      <CountDownSegment label="days" value={diffDate.getDiff("day", now)} />
+      <CountDownSegment label="hours" value={diffDate.getDiff("hour", now)} />
+      <CountDownSegment
+        label="minutes"
+        value={diffDate.getDiff("minute", now)}
+      />
+      <CountDownSegment
+        label="seconds"
+        value={diffDate.getDiff("second", now)}
+      />
     </div>
   );
 };
