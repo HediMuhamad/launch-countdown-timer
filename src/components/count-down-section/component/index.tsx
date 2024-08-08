@@ -15,7 +15,7 @@ const CountDown: React.FC = () => {
     [changeableDate]
   );
   return (
-    <div className="flex gap-12">
+    <div className="flex gap-12 w-full justify-center">
       <CountDownSegment label="days" value={diffDate.getDiff("day", now)} />
       <CountDownSegment label="hours" value={diffDate.getDiff("hour", now)} />
       <CountDownSegment
